@@ -30,7 +30,7 @@ public class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_SONGS_TABLE = "CREATE TABLE " + TABLE_SONGS + "("
-                + KEY_SONGNAME + " TEXT UNIQUE PRIMARY KEY,"
+                + KEY_SONGNAME + " TEXT,"
                 + KEY_ARTISTNAME + " TEXT,"
                 + KEY_ALBUMNAME + " TEXT,"
                 + KEY_LYRICS + " TEXT" + ")";
@@ -51,8 +51,11 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public void addRecords(String SongName, String ArtistName, String AlbumName, String Lyrics) {
 
-        SQLiteDatabase db = this.getWritableDatabase();
+        if(isSongThere(SongName)){
+            return;
+        }
 
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_SONGNAME, SongName);
         values.put(KEY_ARTISTNAME, ArtistName);
@@ -74,6 +77,26 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
 
         return rowCount;
+    }
+
+    public boolean isSongThere(String SongName){
+        boolean b = false;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM "+ TABLE_SONGS;
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+        int count = cursor.getCount();
+        while(count > 0){
+            if(SongName.equals(cursor.getString(0))){
+                b=true;
+                break;
+            }
+            cursor.moveToNext();
+            count--;
+        }
+        db.close();
+        return b;
     }
 
     public String[][] getSongs() {

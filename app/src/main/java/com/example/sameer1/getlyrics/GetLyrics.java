@@ -59,22 +59,11 @@ public class GetLyrics extends Fragment {
         nothingLayout = (LinearLayout) v.findViewById(R.id.nothingLayout);
         MainActivity activity = (MainActivity) getActivity();
 
-
-        IntentFilter iF = new IntentFilter();
-        iF.addAction("com.android.music.metachanged");
-        iF.addAction("com.android.music.playstatechanged");
-        iF.addAction("com.android.music.playbackcomplete");
-        iF.addAction("com.android.music.queuechanged");
-
-        getActivity().registerReceiver(mReceiver, iF);
-
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater2 = getActivity().getLayoutInflater();
         builder.setView(inflater2.inflate(R.layout.dialog, null));
         dialog = builder.create();
-
-
-        Log.v("IN On CREATE", artist + ":" + album + ":" + song);
+        //Log.v("IN On CREATE", artist + ":" + album + ":" + song);
 
         refresh = activity.getButton();
         refresh.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +83,6 @@ public class GetLyrics extends Fragment {
                     //Log.d("SONG", song);
                     TheTask to_execute= new TheTask();
                     to_execute.execute("");
-
                 }
                 else{
                     Snackbar.make(v,"Please Connect to the Internet !!",Snackbar.LENGTH_SHORT).show();
@@ -120,12 +108,16 @@ public class GetLyrics extends Fragment {
                 album = intent.getStringExtra("album");
                 song = intent.getStringExtra("track");
 
-            SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putString(getString(R.string.current_song), song);
-            editor.putString(getString(R.string.current_album), album);
-            editor.putString(getString(R.string.current_artist), artist);
-            editor.commit();
+            if(song + " " != null){
+                SharedPreferences sharedPref = context.getSharedPreferences("myPrefs",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                Toast.makeText(getActivity(), song + " ", Toast.LENGTH_SHORT).show();
+                editor.putString(getString(R.string.current_song), song);
+                editor.putString(getString(R.string.current_album), album);
+                editor.putString(getString(R.string.current_artist), artist);
+                editor.commit();
+            }
+
             //Log.v("IN On RECEIVE", artist + ":" + album + ":" + song);
         }
 
@@ -134,17 +126,36 @@ public class GetLyrics extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
+        IntentFilter iF = new IntentFilter();
+        iF.addAction("com.android.music.metachanged");
+        //iF.addAction("com.android.music.playstatechanged");
+        iF.addAction("com.android.music.playbackcomplete");
+        iF.addAction("com.android.music.queuechanged");
+
+        getActivity().registerReceiver(mReceiver, iF);
     }
 
     @Override
     public void onPause(){
         super.onPause();
-
+        getActivity().unregisterReceiver(mReceiver);
     }
 
+    @Override
+    public void onDestroy() {
+        try {
+            if (dialog != null && dialog.isShowing()) {
+                dialog.dismiss();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        super.onDestroy();
+    }
 
     public class TheTask extends AsyncTask<String,Void,String> {
-        String Song, Album, Artist;
+        String Song = " ", Album = " ", Artist = " ";
+        String Fsong, Falbum, Fartist;
 
         @Override
         protected void onPreExecute() {
@@ -155,25 +166,31 @@ public class GetLyrics extends Fragment {
         @Override
         protected String doInBackground(String... params) {
 
-            SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-            Song = sharedPref.getString(getString(R.string.current_song), "");
-            Album = sharedPref.getString(getString(R.string.current_album), "");
-            Artist = sharedPref.getString(getString(R.string.current_artist), "");
+            SharedPreferences sharedPref = getActivity().getSharedPreferences("myPrefs",Context.MODE_PRIVATE);
+            Song = sharedPref.getString(getString(R.string.current_song), "Man who cant be moved");
+            Album = sharedPref.getString(getString(R.string.current_album), " ");
+            Artist = sharedPref.getString(getString(R.string.current_artist), " ");
             //String Song = params[0];
             Song = Song.replaceAll("-"," ");
             Song = Song.replaceAll("_"," ");
+            Song = Song.replaceAll("'","");
             Song = Song.replaceAll("\\(.*\\)", "");
             Song = Song.replaceAll("[-+.^:,';]","");
-
+            Fsong = Song;
+            //Log.d("Song", Song);
             Artist = Artist.replaceAll("-"," ");
             Artist = Artist.replaceAll("_"," ");
             Artist = Artist.replaceAll("\\(.*\\)", "");
             Artist = Artist.replaceAll("[-+.^:,';]","");
-            String temp = Song.concat(" " + Artist);
-            temp = temp.replaceAll(" ","+");
+            Artist = Artist.replaceAll("<[^>]*>", " ");
+            Fartist = Artist;
+            //Log.d("Artist", Artist);
+            Song = Song.concat(" " + Artist);
+            Song = Song.replaceAll(" ","+");
 
             String question = new String();
-            String url = "https://search.letssingit.com/?a=search&artist_id=&l=archive&s="+temp;
+            String url = "https://search.letssingit.com/?a=search&artist_id=&l=archive&s="+Song;
+            //Log.d("ÜRL", url);
             //String url = "http://www.metrolyrics.com/search.html?search=flares";
             //url="https://www.newstelecom.info/2016/08/jiofi-complete-setup-faq/#.WOfSWFV95PZ";
             try {
@@ -211,13 +228,12 @@ public class GetLyrics extends Fragment {
             //Log.d("value",result);
             if(result != ""){
                 final DBHandler db = new DBHandler(getActivity().getApplicationContext());
-                db.addRecords(Song, Artist, Album, result);
+                db.addRecords(Fsong, Fartist, Album, result);
                 db.close();
             }
-
             nothingLayout.setVisibility(View.GONE);
             lyrics.setVisibility(View.VISIBLE);
-            dialog.cancel();
+            dialog.dismiss();
             lyrics.setText(result);
         }
     }
