@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_lyrics"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    tools:context="com.example.sameer1.getlyrics.lyrics">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/about_app_toobar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:title="About App"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/SongName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Song Name"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                />
+            <TextView
+                android:id="@+id/ArtistName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Artist Name"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:paddingBottom="10dp"
+                />
+            <TextView
+                android:id="@+id/SongLyrics"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text=""
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

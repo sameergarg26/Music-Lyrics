@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/realativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.sameer1.getlyrics.GetLyrics">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/lyrics"
+        android:padding="40dp"
+        android:textColor="#000000"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:background="#eeeeee"
+        android:layout_height="match_parent"
+        android:text=""/>
+
+
+
+    <LinearLayout
+        android:id="@+id/nothingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:padding="20dp">
+        <TextView
+            android:id="@+id/nothingToShowText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Press Refresh Button to Get Lyrics"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/nothing"
+            android:id="@+id/nothingToShowImage" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+

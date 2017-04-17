@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_get_lyrics"
+            android:icon="@drawable/ic_account_box_black_48dp"
+            android:title="Get Instant Lyrics" />
+        <item
+            android:id="@+id/nav_saved_lyrics"
+            android:icon="@drawable/ic_account_box_black_48dp"
+            android:title="Saved Lyrics" />
+    </group>
+
+    <item android:title="About">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_account_box_black_48dp"
+                android:title="Instructions To Use"
+                />
+        </menu>
+    </item>
+</menu>

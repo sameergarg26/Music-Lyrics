@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Music Lyrics</string>
+    <string name="sample_string">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Etiam tincidunt tincidunt
+        dui quis efficitur. Pellentesque lacinia hendrerit dignissim.
+        Donec facilisis, leo a tempus accumsan, massa velit dapibus risus,
+        vel interdum felis orci eget mauris. Donec ultricies, tellus sit amet
+        fringilla efficitur, magna ipsum volutpat nunc, in aliquam nunc ante eu massa.
+        Vestibulum nec eros et nibh egestas vulputate. Fusce hendrerit,
+        purus et facilisis fermentum, augue lorem dignissim quam, vel commodo enim ex non nisl.
+        Integer a egestas risus, id consequat felis. Phasellus ut orci sit
+        amet ligula hendrerit blandit eu ac mauris. Integer molestie commodo augue eget auctor.
+Morbi eget mi tristique, ullamcorper urna eget, vestibulum lorem.
+        Maecenas sapien sapien, porttitor vitae euismod malesuada,
+        tincidunt sed mi. Aliquam egestas urna non eros sagittis, at
+        tincidunt metus posuere. Vestibulum molestie tincidunt nunc e
+        get porttitor. Morbi ut enim nec turpis tempus ornare eget sed
+        arcu. Aenean vel lacinia nibh. Quisque volutpat dui ac suscipit
+        iaculis. Integer eget congue justo. Vestibulum pharetra dapibus
+        turpis, sed suscipit nunc dignissim non. Maecenas ullamcorper sodales
+        enim, in aliquet odio luctus eu. Nunc tellus nisl, dignissim eget risus
+        a, tempor finibus massa. Donec a mauris sed est lacinia egestas vitae ac
+        nunc. Aliquam nec hendrerit magna, id egestas eros. Sed pretium suscipit
+        vestibulum. Cras blandit euismod tortor eget tincidunt.
+Integer tincidunt turpis id ex mollis, at maximus enim dictum. Ut tempus a magna
+        non porta. Nunc congue vulputate ipsum et pulvinar. Donec porttitor purus
+        placerat sagittis euismod. Donec consequat orci quis interdum fringilla.
+        Mauris ultricies augue ut urna posuere tincidunt. Maecenas malesuada sem ac
+        ante faucibus posuere. In posuere pretium laoreet. Aenean pretium, nulla vel
+        ullamcorper accumsan, arcu ante tempus ex, vel posuere justo nunc non justo.
+        Pellentesque mattis tellus nibh, sit amet commodo metus placerat ut.
+Curabitur fringilla auctor lacus sit amet aliquam. Sed imperdiet mi neque. Mauris
+        rutrum elit ligula. Vestibulum nisl nulla, rhoncus ac nisl et, ultrices finibus
+        justo. Ut tempor tortor sed mi sollicitudin, a condimentum mi ultrices. Curabitur
+        rutrum congue sem, ut lobortis arcu suscipit eu. In finibus libero sed tristique
+        iaculis. Ut mattis nec metus sagittis porta. Pellentesque fermentum hendrerit porttitor.
+        Nunc elementum tincidunt lacus, vel fermentum mauris sagittis vitae.
+        Vivamus a nisi ante. Morbi ornare, odio quis elementum luctus, risus
+        ligula lobortis magna, dignissim dictum risus ligula in velit. Vivamus
+        aliquet, tortor eget pretium convallis, neque purus dapibus odio, vitae
+        mollis nisl sem non sem. In aliquet auctor dolor vel malesuada
+        Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Etiam tincidunt tincidunt
+        dui quis efficitur. Pellentesque lacinia hendrerit dignissim.
+        Donec facilisis, leo a tempus accumsan, massa velit dapibus risus,
+        vel interdum felis orci eget mauris. Donec ultricies, tellus sit amet
+        fringilla efficitur, magna ipsum volutpat nunc, in aliquam nunc ante eu massa.
+        Vestibulum nec eros et nibh egestas vulputate. Fusce hendrerit,
+        purus et facilisis fermentum, augue lorem dignissim quam, vel commodo enim ex non nisl.
+        Integer a egestas risus, id consequat felis. Phasellus ut orci sit
+        amet ligula hendrerit blandit eu ac mauris. Integer molestie commodo augue eget auctor.
+Morbi eget mi tristique, ullamcorper urna eget, vestibulum lorem.
+        Maecenas sapien sapien, porttitor vitae euismod malesuada,
+        tincidunt sed mi. Aliquam egestas urna non eros sagittis, at
+        tincidunt metus posuere. Vestibulum molestie tincidunt nunc e
+        get porttitor. Morbi ut enim nec turpis tempus ornare eget sed
+        arcu. Aenean vel lacinia nibh. Quisque volutpat dui ac suscipit
+        iaculis. Integer eget congue justo. Vestibulum pharetra dapibus
+        turpis, sed suscipit nunc dignissim non. Maecenas ullamcorper sodales
+        enim, in aliquet odio luctus eu. Nunc tellus nisl, dignissim eget risus
+        a, tempor finibus massa. Donec a mauris sed est lacinia egestas vitae ac
+        nunc. Aliquam nec hendrerit magna, id egestas eros. Sed pretium suscipit
+        vestibulum. Cras blandit euismod tortor eget tincidunt.
+Integer tincidunt turpis id ex mollis, at maximus enim dictum. Ut tempus a magna
+        non porta. Nunc congue vulputate ipsum et pulvinar. Donec porttitor purus
+        placerat sagittis euismod. Donec consequat orci quis interdum fringilla.
+        Mauris ultricies augue ut urna posuere tincidunt. Maecenas malesuada sem ac
+        ante faucibus posuere. In posuere pretium laoreet. Aenean pretium, nulla vel
+        ullamcorper accumsan, arcu ante tempus ex, vel posuere justo nunc non justo.
+        Pellentesque mattis tellus nibh, sit amet commodo metus placerat ut.
+Curabitur fringilla auctor lacus sit amet aliquam. Sed imperdiet mi neque. Mauris
+        rutrum elit ligula. Vestibulum nisl nulla, rhoncus ac nisl et, ultrices finibus
+        justo. Ut tempor tortor sed mi sollicitudin, a condimentum mi ultrices. Curabitur
+        rutrum congue sem, ut lobortis arcu suscipit eu. In finibus libero sed tristique
+        iaculis. Ut mattis nec metus sagittis porta. Pellentesque fermentum hendrerit porttitor.
+        Nunc elementum tincidunt lacus, vel fermentum mauris sagittis vitae.
+        Vivamus a nisi ante. Morbi ornare, odio quis elementum luctus, risus
+        ligula lobortis magna, dignissim dictum risus ligula in velit. Vivamus
+        aliquet, tortor eget pretium convallis, neque purus dapibus odio, vitae
+        mollis nisl sem non sem. In aliquet auctor dolor vel malesuada.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+    <string name="current_artist">CURRENT_ARTIST</string>
+    <string name="current_album">CURRENT_ALBUM</string>
+    <string name="current_song">CURRENT_SONG</string>
+</resources>
