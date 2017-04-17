@@ -18,7 +18,7 @@ public class AboutApp extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-        ab.setTitle("About App");
+        ab.setTitle("Instructions");
 
     }
 

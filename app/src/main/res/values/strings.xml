@@ -86,4 +86,17 @@ Curabitur fringilla auctor lacus sit amet aliquam. Sed imperdiet mi neque. Mauri
     <string name="current_artist">CURRENT_ARTIST</string>
     <string name="current_album">CURRENT_ALBUM</string>
     <string name="current_song">CURRENT_SONG</string>
+    <string name="instructions">
+        Hi to all the users!!
+        \n\n
+        In order to make full use of the application do give the following points a read.
+        \n\n
+        1) Ensure Net Connectivity to fetch Lyrics\n\n
+        2) It is possible that no lyrics are displayed even if the device is connected to the internet, \n
+           in such a situation please refresh the lyrics again a couple of times or try again later.\n\n
+        3) The Saved Lyrics can be accessed from the drawer icon on the toobar\n\n
+
+        Enjoy Music!!\n
+        And have a great time with music Lyrics.
+    </string>
 </resources>

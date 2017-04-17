@@ -1,0 +1,27 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sameer1.getlyrics.IntroFragmentTwo">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/lostinmusic"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/textExp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:padding="40dp"
+        android:textSize="30dp"
+        android:text="Enjoy the lyrics even when not connected to the Internet"/>
+
+
+
+
+</FrameLayout>

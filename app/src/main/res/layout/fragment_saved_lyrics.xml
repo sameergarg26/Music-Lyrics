@@ -5,7 +5,13 @@
     android:orientation="vertical"
     android:background="#eeeeee"
     tools:context="com.example.sameer1.getlyrics.SavedLyrics">
-
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="-- No Saved Lyrics Yet --"/>
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"

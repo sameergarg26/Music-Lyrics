@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ public class SavedLyrics extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private static List<Model> demoData;
-
+    TextView hint;
     public SavedLyrics() {
         // Required empty public constructor
     }
@@ -32,6 +33,8 @@ public class SavedLyrics extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_saved_lyrics, container, false);
+        hint = (TextView) v.findViewById(R.id.hint);
+        hint.setVisibility(View.GONE);
 
         mRecyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view);
         mRecyclerView.setNestedScrollingEnabled(false);
@@ -46,6 +49,9 @@ public class SavedLyrics extends Fragment {
         final DBHandler db = new DBHandler(getActivity().getApplicationContext());
         String[][] songDetails = db.getSongs();
         int rows = db.getRowCount();
+        if(rows == 0){
+            hint.setVisibility(View.VISIBLE);
+        }
         db.close();
         demoData = new ArrayList<Model>();
         for (int i = 0; i < rows; i++) {

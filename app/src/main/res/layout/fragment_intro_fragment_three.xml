@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sameer1.getlyrics.IntroFragmentThree">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/rainmusic"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/textExp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:padding="40dp"
+        android:textSize="30dp"
+        android:text="Let the notes rain and gear up to sing along"/>
+
+    <TextView
+        android:id="@+id/getstarted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:paddingTop="20dp"
+        android:textColor="#26A69A"
+        android:background="@drawable/get_started_state_changed"
+        android:paddingBottom="20dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:clickable="true"
+        android:layout_marginBottom="70dp"
+        android:text="Get Started"/>
+
+
+
+
+</FrameLayout>

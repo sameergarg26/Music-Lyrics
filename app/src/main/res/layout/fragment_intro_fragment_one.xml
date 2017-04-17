@@ -1,0 +1,38 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sameer1.getlyrics.IntroFragmentOne">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/earphones"
+        android:scaleType="centerCrop" />
+    <TextView
+        android:id="@+id/textExp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:padding="40dp"
+        android:textSize="30dp"
+        android:text="Now\nSing Along Your Favourite\nSong with\nMusic Lyrics"/>
+
+    <TextView
+        android:id="@+id/textExp2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:text="Fetch lyrics while listening to your Song"
+        android:layout_marginBottom="20dp"
+        android:padding="40dp"
+        android:textSize="30dp"
+        />
+
+</FrameLayout>

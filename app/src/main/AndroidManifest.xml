@@ -20,9 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".AboutApp" />
-        <activity android:name=".lyrics"></activity>
+        <activity android:name=".lyrics" />
+        <activity android:name=".Intro"></activity>
     </application>
 
 </manifest>
