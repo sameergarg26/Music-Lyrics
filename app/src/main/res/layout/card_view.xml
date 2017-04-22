@@ -7,6 +7,8 @@
     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
     android:minHeight="?android:attr/listPreferredItemHeightSmall"
     android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
     xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
 
@@ -23,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="Song Name"
                 android:textSize="20dp"
+                android:focusable="true"
                 android:clickable="true"
                 android:textColor="@android:color/black"
                 />

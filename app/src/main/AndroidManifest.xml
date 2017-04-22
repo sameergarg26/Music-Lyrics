@@ -23,7 +23,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".AboutApp" />
         <activity android:name=".lyrics" />
-        <activity android:name=".Intro"></activity>
+        <activity android:name=".Intro" />
+        <activity android:name=".SearchLyrics"></activity>
     </application>
 
 </manifest>

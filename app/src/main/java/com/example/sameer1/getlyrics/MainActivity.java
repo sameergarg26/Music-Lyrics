@@ -125,6 +125,9 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
                        android.R.anim.fade_out);
                 fragmentTransaction.replace(R.id.frame, fragment, CURRENT_TAG);
+                fragmentTransaction.detach(fragment);
+                fragmentTransaction.attach(fragment);
+
                 fragmentTransaction.commitAllowingStateLoss();
             }
         };
@@ -190,6 +193,11 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, AboutApp.class));
                         myDrawer.closeDrawers();
                         return true;
+                    case R.id.search_lyrics:
+                        startActivity(new Intent(MainActivity.this, SearchLyrics.class));
+                        myDrawer.closeDrawers();
+                        return true;
+
                 }
 
                 //Checking if the item is in checked state or not, if not make it in checked state
@@ -236,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        /*
+
         // This code loads home fragment when back key is pressed
         // when user is in other fragment than home
         if (shouldLoadHomeFragOnBackPress) {
@@ -248,8 +256,9 @@ public class MainActivity extends AppCompatActivity {
                 loadHomeFragment();
                 return;
             }
+
         }
-*/
+
         super.onBackPressed();
     }
 

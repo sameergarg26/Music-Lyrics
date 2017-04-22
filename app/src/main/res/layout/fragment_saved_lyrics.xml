@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="15dp"
-        android:text="-- No Saved Lyrics Yet --"/>
+        android:text="-- No Saved Lyrics --"/>
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"

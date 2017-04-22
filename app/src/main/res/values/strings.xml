@@ -93,8 +93,9 @@ Curabitur fringilla auctor lacus sit amet aliquam. Sed imperdiet mi neque. Mauri
         \n\n
         1) Ensure Net Connectivity to fetch Lyrics\n\n
         2) It is possible that no lyrics are displayed even if the device is connected to the internet, \n
-           in such a situation please refresh the lyrics again a couple of times or try again later.\n\n
-        3) The Saved Lyrics can be accessed from the drawer icon on the toobar\n\n
+           in such a situation please refresh the lyrics again a couple of times or search for the song in the search section.\n\n
+        3) The Saved Lyrics can be accessed from the drawer icon on the toolbar\n\n
+        4) The saved lyrics can also be deleted by long pressing the song name\n\n
 
         Enjoy Music!!\n
         And have a great time with music Lyrics.

@@ -127,11 +127,66 @@ public class GetLyrics extends Fragment {
     public void onResume(){
         super.onResume();
         IntentFilter iF = new IntentFilter();
+
+        iF.addAction("com.android.music.metachanged");
+        //iF.addAction("com.android.music.playstatechanged");
+        iF.addAction("com.android.music.playbackcomplete");
+        iF.addAction("com.android.music.queuechanged");
         iF.addAction("com.android.music.metachanged");
         //iF.addAction("com.android.music.playstatechanged");
         iF.addAction("com.android.music.playbackcomplete");
         iF.addAction("com.android.music.queuechanged");
 
+        //HTC Music
+        //iF.addAction("com.htc.music.playstatechanged");
+        iF.addAction("com.htc.music.playbackcomplete");
+        iF.addAction("com.htc.music.metachanged");
+        //MIUI Player
+        //iF.addAction("com.miui.player.playstatechanged");
+        iF.addAction("com.miui.player.playbackcomplete");
+        iF.addAction("com.miui.player.metachanged");
+        //Real
+        //iF.addAction("com.real.IMP.playstatechanged");
+        iF.addAction("com.real.IMP.playbackcomplete");
+        iF.addAction("com.real.IMP.metachanged");
+        //SEMC Music Player
+        iF.addAction("com.sonyericsson.music.playbackcontrol.ACTION_TRACK_STARTED");
+        iF.addAction("com.sonyericsson.music.playbackcontrol.ACTION_PAUSED");
+        iF.addAction("com.sonyericsson.music.TRACK_COMPLETED");
+        iF.addAction("com.sonyericsson.music.metachanged");
+        iF.addAction("com.sonyericsson.music.playbackcomplete");
+        //iF.addAction("com.sonyericsson.music.playstatechanged");
+        //rdio
+        iF.addAction("com.rdio.android.metachanged");
+        //iF.addAction("com.rdio.android.playstatechanged");
+        //Samsung Music Player
+        //iF.addAction("com.samsung.sec.android.MusicPlayer.playstatechanged");
+        iF.addAction("com.samsung.sec.android.MusicPlayer.playbackcomplete");
+        iF.addAction("com.samsung.sec.android.MusicPlayer.metachanged");
+        //iF.addAction("com.sec.android.app.music.playstatechanged");
+        iF.addAction("com.sec.android.app.music.playbackcomplete");
+        iF.addAction("com.sec.android.app.music.metachanged");
+        //Winamp
+        //iF.addAction("com.nullsoft.winamp.playstatechanged");
+        iF.addAction("com.nullsoft.winamp.metachanged");
+        //Amazon
+        //iF.addAction("com.amazon.mp3.playstatechanged");
+        iF.addAction("com.amazon.mp3.metachanged");
+        //Rhapsody
+        //iF.addAction("com.rhapsody.playstatechanged");
+        //PowerAmp
+        //iF.addAction("com.maxmpz.audioplayer.playstatechanged");
+        //will be added any....
+        //scrobblers detect for players (poweramp for example)
+        //Last.fm
+        iF.addAction("fm.last.android.metachanged");
+        iF.addAction("fm.last.android.playbackpaused");
+        iF.addAction("fm.last.android.playbackcomplete");
+        //A simple last.fm scrobbler
+        //iF.addAction("com.adam.aslfms.notify.playstatechanged");
+        // Others
+        iF.addAction("net.jjc1138.android.scrobbler.action.MUSIC_STATUS");
+        iF.addAction("com.andrew.apollo.metachanged");
         getActivity().registerReceiver(mReceiver, iF);
     }
 
@@ -210,7 +265,9 @@ public class GetLyrics extends Fragment {
                         }
                     }
                 }
-
+                if(question.equals("#")){
+                    return "Nothing Found" ;
+                }
                 Document finalDoc = Jsoup.connect(question).get();
                 Elements element = finalDoc.select("div#lyrics");
                 question = element.html();
@@ -226,6 +283,14 @@ public class GetLyrics extends Fragment {
         @Override
         protected void onPostExecute(String result) {
             //Log.d("value",result);
+            if(result.equals("Nothing Found")){
+                nothingLayout.setVisibility(View.GONE);
+                lyrics.setVisibility(View.VISIBLE);
+                dialog.dismiss();
+                String sorry = "Sorry!!\nCould Not find anything. Try searching by name in search section.";
+                lyrics.setText(sorry);
+                return;
+            }
             if(result != ""){
                 final DBHandler db = new DBHandler(getActivity().getApplicationContext());
                 db.addRecords(Fsong, Fartist, Album, result);

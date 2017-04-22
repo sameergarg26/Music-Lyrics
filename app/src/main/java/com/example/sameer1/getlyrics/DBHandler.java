@@ -123,6 +123,14 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
 
+    public void deleteSong(String Song_name){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABLE_SONGS, KEY_SONGNAME + " = '" + Song_name + "'", null);
+        db.close();
+
+    }
+
     public void resetTable_Misc() {
         SQLiteDatabase db = this.getWritableDatabase();
 

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_about_app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eeeeee"
+    tools:context="com.example.sameer1.getlyrics.SearchLyrics">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/about_app_toobar"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:title="About App"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Song Name"
+                android:layout_marginBottom="5dp"
+                />
+            <EditText
+                android:id="@+id/songName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_back"
+                android:padding="@dimen/activity_vertical_margin"
+                android:hint="Song Name"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Artist Name"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="5dp"
+                />
+            <EditText
+                android:id="@+id/artistName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_back"
+                android:padding="@dimen/activity_vertical_margin"
+                android:hint="Artist Name"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Album Name"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="5dp"
+                />
+            <EditText
+                android:id="@+id/albumName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_back"
+                android:padding="@dimen/activity_vertical_margin"
+                android:hint="Album Name"/>
+
+            <Button
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Search"
+                android:textColor="#ffffff"
+                android:background="@drawable/button_back"
+                android:clickable="false"
+                android:alpha="0.3"
+                android:layout_marginTop="25dp"/>
+        </LinearLayout>
+    </LinearLayout>

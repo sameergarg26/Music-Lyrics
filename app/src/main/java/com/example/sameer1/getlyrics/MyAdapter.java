@@ -1,5 +1,6 @@
 package com.example.sameer1.getlyrics;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -64,6 +65,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 intent.putExtra("AlbumName",SONG.getAlbumName());
                 intent.putExtra("Lyrics",SONG.getSongLyrics());
                 v.getContext().startActivity(intent);
+            }
+        });
+        holder.song.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                final DBHandler db = new DBHandler(mContext);
+                db.deleteSong(SONG.getSongName());
+                db.close();
+                Toast.makeText(mContext, "Song Deleted !!", Toast.LENGTH_SHORT).show();
+                notifyDataSetChanged();
+                return false;
             }
         });
     }

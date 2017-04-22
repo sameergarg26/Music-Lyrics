@@ -9,6 +9,11 @@
             android:id="@+id/nav_saved_lyrics"
             android:icon="@drawable/ic_account_box_black_48dp"
             android:title="Saved Lyrics" />
+        <item
+            android:id="@+id/search_lyrics"
+            android:icon="@drawable/ic_account_box_black_48dp"
+            android:title="Search For Lyrics"
+            />
     </group>
 
     <item android:title="About">
@@ -20,4 +25,5 @@
                 />
         </menu>
     </item>
+
 </menu>
